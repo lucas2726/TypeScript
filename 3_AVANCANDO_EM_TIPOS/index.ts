@@ -84,3 +84,90 @@ function showBalance(balance: string | number) {
 
 showBalance(100)
 showBalance("600")
+
+//Avançando em union type
+function showUserRole(role: boolean | string) {
+    if (typeof role == "boolean") {
+        return "Usuário não aprovado"
+    }
+    return `A função do usuário é: ${role}`
+}
+
+console.log(showUserRole(false))
+console.log(showUserRole("Admin"))
+
+//type alias
+type ID = string | number
+
+function showId(id: ID) {
+    console.log(`O ID é: ${id}`)
+}
+
+showId(1)
+showId("200")
+showId(123)
+
+//interface
+interface Point {
+    x: number
+    y: number
+    z: number
+}
+
+function showCoords(obj: Point) {
+    console.log(`X: ${obj.x}, Y: ${obj.y}, Z: ${obj.z}`)
+}
+
+const coordObj: Point = {
+    x: 10,
+    y: 15,
+    z: 20
+}
+
+//interface x type
+interface Person {
+    name: string
+}
+
+interface Person {
+    age: number
+}
+
+const somePerson: Person = {name: "Lucas", age: 19}
+
+console.log(somePerson)
+
+type personType = {
+    name: string
+}
+
+//Literal types
+function showDirection(direction: "left" | "right" | "center") {
+    console.log(`A direção é: ${direction}`)
+}
+
+console.log("left")
+
+//non null assertion operators
+const p = document.getElementById("some-p")
+
+console.log(p!.innerText)
+
+//bigint
+let n: bigint
+
+//n = 1
+n = 1000n
+
+console.log(n)
+
+console.log(typeof n)
+
+console.log(n + 100n)
+
+//symbol
+let symbolA:symbol = Symbol("a")
+let symbolB = Symbol("a")
+
+console.log(symbolA == symbolB)
+console.log(symbolA === symbolB)
