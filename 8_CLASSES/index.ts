@@ -79,6 +79,7 @@ const jimmy = new Dwarf("Jimmy")
 
 jimmy.greeting()
 
+
 // 6 - this
 class Truck {
   model
