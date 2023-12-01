@@ -38,7 +38,7 @@ console.log(myPen)
 // 4 - type parameters
 
 function getSomeKey<T, K extends keyof T>(obj: T, key: K) {
-  return `A chave ${key} tem o valor ${obj[key]}`
+  return `A chave ${String(key)} tem o valor ${obj[key]}`
 }
 
 const server = {
